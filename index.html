@@ -12,30 +12,21 @@
             color: white;
             text-align: center;
         }
-        #inputBox {
-            display: none; /* Initially hidden */
-        }
     </style>
 </head>
 <body>
     <h1>Text Generator</h1>
-    <button onclick="toggleInput()">Enter</button>
     <input type="text" id="inputBox" placeholder="Enter your text">
+    <button onclick="sendEmail()">Enter</button>
     <script>
-        function toggleInput() {
-            const inputBox = document.getElementById('inputBox');
-            inputBox.style.display = inputBox.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // When the user clicks "Enter", send the text to the specified email
-        document.querySelector('button').addEventListener('click', () => {
+        function sendEmail() {
             const text = document.getElementById('inputBox').value;
             if (text) {
                 // Replace with your email address
                 const email = 'elbarodyhamzaahmed@gmail.com';
                 window.location.href = `mailto:${email}?subject=Generated Text&body=${encodeURIComponent(text)}`;
             }
-        });
+        }
     </script>
 </body>
 </html>
